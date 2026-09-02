@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casas Jastelo: projetos contempor&acirc;neos, constru&ccedil;&atilde;o de excel&ecirc;ncia e atendimento pr&oacute;ximo em S&atilde;o Lu&iacute;s e regi&atilde;o.">
+  <title>Jastelo | Casas feitas para viver bem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="polish.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Jastelo &mdash; in&iacute;cio">
+      <img src="assets/jastelo-01.png" alt="Jastelo Constru&ccedil;&otilde;es e Empreendimentos">
+    </a>
+    <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Navega&ccedil;&atilde;o principal">
+      <a class="active" href="index.html">In&iacute;cio</a><a href="imoveis.html">Im&oacute;veis</a><a href="sobre.html">Sobre n&oacute;s</a><a href="como-comprar.html">Como comprar</a><a href="trabalhe-conosco.html">Trabalhe conosco</a>
+    </nav>
+    <a class="header-cta" href="#contato">Fale com a Jastelo <span>&rarr;</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-image" src="assets/jastelo-40.png" alt="Resid&ecirc;ncia t&eacute;rrea Alto do Turu dispon&iacute;vel para venda">
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow light">Casas &agrave; venda em S&atilde;o Lu&iacute;s e regi&atilde;o</p>
+        <h1>Encontre a casa<br>que combina com<br><span>a sua hist&oacute;ria.</span></h1>
+        <p class="hero-copy">Projetos contempor&acirc;neos, acabamento de alto padr&atilde;o e a seguran&ccedil;a de comprar diretamente com quem constr&oacute;i.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#imoveis">Encontrar meu im&oacute;vel <span>&rarr;</span></a>
+          <a class="text-link light" href="sobre.html">Conhe&ccedil;a a Jastelo <span>&rarr;</span></a>
+        </div>
+      </div>
+      <button class="hero-property property-open" data-property="turu"><span>Dispon&iacute;vel agora</span><strong>Resid&ecirc;ncia Alto do Turu</strong><small>117,62 m&sup2; &middot; 3 quartos &middot; com piscina</small><b>Conhecer im&oacute;vel &#8599;</b></button>
+      <a class="scroll-cue" href="#imoveis">Role para descobrir <span>&darr;</span></a>
+    </section>
+
+    <section class="properties section" id="imoveis">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">Im&oacute;veis Jastelo</p><h2>Encontre a casa<br>que combina com voc&ecirc;.</h2></div>
+        <p>Escolha entre im&oacute;veis prontos para morar e projetos em constru&ccedil;&atilde;o, todos com o padr&atilde;o de qualidade Jastelo.</p>
+      </div>
+      <div class="catalog-toolbar reveal">
+        <div class="filter-tabs" role="group" aria-label="Filtrar im&oacute;veis">
+          <button class="active" data-filter="todos">Todos <sup>06</sup></button>
+          <button data-filter="pronto">Prontos para morar <sup>02</sup></button>
+          <button data-filter="construcao">Lan&ccedil;amentos <sup>01</sup></button>
+          <button data-filter="planta">Venda na planta <sup>02</sup></button>
+          <button data-filter="vendido">Vendidos <sup>01</sup></button>
+        </div>
+        <label class="search"><span>&#9906;</span><input type="search" id="property-search" placeholder="Buscar por bairro ou im&oacute;vel" aria-label="Buscar im&oacute;vel"></label>
+      </div>
+      <div class="property-grid" id="property-grid">
+        <article class="property-card reveal" data-status="pronto" data-search="resid&ecirc;ncia t&eacute;rrea alto do turu cohatrac piscina">
+          <button class="property-open" data-property="turu" aria-label="Ver Resid&ecirc;ncia T&eacute;rrea Alto do Turu">
+            <div class="card-media"><img src="assets/jastelo-40.png" alt="Fachada da Resid&ecirc;ncia T&eacute;rrea Alto do Turu"><span class="status">Pronta para morar</span><span class="card-arrow">&#8599;</span></div>
+            <div class="card-body"><p class="property-code">JA-001 &middot; ALTO DO TURU</p><h3>Resid&ecirc;ncia T&eacute;rrea Alto do Turu</h3><div class="facts"><span>117,62 m&sup2;</span><span>3 quartos</span><span>2 vagas</span></div><div class="price"><small>A partir de</small><strong>R$ 530.000</strong></div></div>
+          </button>
+        </article>
+        <article class="property-card reveal" data-status="pronto" data-search="resid&ecirc;ncia alto do turu sem piscina cohatrac">
+          <button class="property-open" data-property="turu-sem-piscina" aria-label="Ver Resid&ecirc;ncia Alto do Turu sem piscina">
+            <div class="card-media"><img src="assets/jastelo-28.png" alt="Fachada da Resid&ecirc;ncia Alto do Turu sem piscina"><span class="status">Pronta para morar</span><span class="card-arrow">&#8599;</span></div>
+            <div class="card-body"><p class="property-code">JA-002 &middot; ALTO DO TURU</p><h3>Resid&ecirc;ncia Alto do Turu</h3><div class="facts"><span>117,62 m&sup2;</span><span>3 quartos</span><span>2 vagas</span></div><div class="price"><small>A partir de</small><strong>R$ 500.000</strong></div></div>
+          </button>
+        </article>
+        <article class="property-card reveal" data-status="construcao" data-search="resid&ecirc;ncia t&eacute;rrea ara&ccedil;agy lan&ccedil;amento piscina 4 su&iacute;tes">
+          <button class="property-open" data-property="aracagy" aria-label="Ver Resid&ecirc;ncia T&eacute;rrea Ara&ccedil;agy">
+            <div class="card-media"><img src="assets/aracagy-lancamento-capa.jpg" alt="Lan&ccedil;amento Residencial T&eacute;rrea Ara&ccedil;agy"><span class="status construction">Lan&ccedil;amento</span><span class="card-arrow">&#8599;</span></div>
+            <div class="card-body"><p class="property-code">JA-003 &middot; ARA&Ccedil;AGY</p><h3>Residencial T&eacute;rrea Ara&ccedil;agy</h3><div class="facts"><span>156,67 m&sup2;</span><span>4 su&iacute;tes</span><span>2 vagas</span></div><div class="price"><small>Por apenas</small><strong>R$ 999.000</strong></div></div>
+          </button>
+        </article>
+        <article class="property-card reveal" data-status="planta" data-search="alto do turu venda na planta sem piscina 3 quartos"><button class="property-open" data-property="planta-sem-piscina"><div class="card-media"><img src="assets/alto-turu-planta-sem-piscina.jpg" alt="Casa Alto do Turu na planta sem piscina"><span class="status plan">Venda na planta</span><span class="card-arrow">&#8599;</span></div><div class="card-body"><p class="property-code">JA-004 &middot; ALTO DO TURU</p><h3>Alto do Turu na planta &middot; sem piscina</h3><div class="facts"><span>117,62 m&sup2;</span><span>3 quartos</span><span>2 vagas</span></div><div class="price"><small>Por apenas</small><strong>R$ 500.000</strong></div></div></button></article>
+        <article class="property-card reveal" data-status="planta" data-search="alto do turu venda na planta com piscina 3 quartos"><button class="property-open" data-property="planta-com-piscina"><div class="card-media"><img src="assets/alto-turu-planta-com-piscina.jpg" alt="Casa Alto do Turu na planta com piscina"><span class="status plan">Venda na planta</span><span class="card-arrow">&#8599;</span></div><div class="card-body"><p class="property-code">JA-005 &middot; ALTO DO TURU</p><h3>Alto do Turu na planta &middot; com piscina</h3><div class="facts"><span>117,62 m&sup2;</span><span>3 quartos</span><span>2 vagas</span></div><div class="price"><small>Por apenas</small><strong>R$ 530.000</strong></div></div></button></article>
+        <article class="property-card reveal" data-status="vendido" data-search="duplex ara&ccedil;agy praia azul vendido 4 su&iacute;tes">
+          <button class="property-open" data-property="duplex" aria-label="Ver Duplex Ara&ccedil;agy Praia Azul">
+            <div class="card-media"><img src="assets/jastelo-03.png" alt="Fachada do Duplex Ara&ccedil;agy Praia Azul"><span class="status sold">Todas vendidas</span><span class="card-arrow">&#8599;</span></div>
+            <div class="card-body"><p class="property-code">PORTF&Oacute;LIO &middot; ARA&Ccedil;AGY PRAIA AZUL</p><h3>Duplex Ara&ccedil;agy Praia Azul</h3><div class="facts"><span>Casa duplex</span><span>4 su&iacute;tes</span><span>4 unidades</span></div><div class="price"><small>Pre&ccedil;o comercializado</small><strong>R$ 899.000</strong></div></div>
+          </button>
+        </article>
+      </div>
+      <p class="no-results" hidden>Nenhum im&oacute;vel encontrado. Fale com a nossa equipe para conhecer outras oportunidades.</p>
+      <a class="section-more text-link" href="imoveis.html">Ver cat&aacute;logo completo de im&oacute;veis <span>&rarr;</span></a>
+    </section>
+
+    <section class="media-showcase section">
+      <div class="section-heading reveal"><div><p class="eyebrow">Por dentro da Jastelo</p><h2>Projetos para ver,<br>imaginar e viver.</h2></div><p>Conhe&ccedil;a ambientes, detalhes construtivos e a evolu&ccedil;&atilde;o das nossas obras.</p></div>
+      <div class="photo-feature reveal"><figure class="photo-large"><img src="assets/jastelo-36.png" alt="&Aacute;rea de lazer com piscina de uma casa Jastelo"><figcaption>&Aacute;rea de lazer &middot; Projeto Jastelo</figcaption></figure><figure><img src="assets/jastelo-38.png" alt="Interior de alto padr&atilde;o Jastelo"><figcaption>Interiores com identidade</figcaption></figure><figure><img src="assets/jastelo-12.png" alt="Piscina e &Aacute;rea gourmet Jastelo"><figcaption>Conforto em cada espa&ccedil;o</figcaption></figure></div>
+      <div class="video-block reveal"><div><p class="eyebrow light">Jastelo em v&iacute;deo</p><h3>Acompanhe nossas obras e conhe&ccedil;a cada projeto.</h3><p>Este espa&ccedil;o est&aacute; pronto para receber os v&iacute;deos oficiais do canal da Jastelo no YouTube.</p></div><div class="youtube-placeholder"><span>&#9654;</span><strong>V&iacute;deo da Jastelo</strong><small>Cole o link ou o c&oacute;digo do v&iacute;deo do YouTube aqui</small></div></div>
+    </section>
+
+    <section class="signature section" id="sobre">
+      <div class="signature-image reveal"><img src="assets/jastelo-07.jpg" alt="Jo&atilde;o Ant&ocirc;nio e Tharcyla, fundadores da Jastelo"><span class="image-note">Uma fam&iacute;lia.<br>Um prop&oacute;sito.</span></div>
+      <div class="signature-copy reveal">
+        <p class="eyebrow">Sobre a Jastelo</p>
+        <h2>Uma promessa que virou prop&oacute;sito.</h2>
+        <p class="lead">Mais do que construir casas, fomos chamados para edificar hist&oacute;rias.</p>
+        <p>A Jastelo nasceu de um sonho plantado em 2011 e foi fundada oficialmente em 2022. &Agrave; frente da empresa est&aacute;o Tharcyla, arquiteta, e Jo&atilde;o Ant&ocirc;nio, administrador apaixonado por gest&atilde;o e obras. Juntos, eles unem t&eacute;cnica, sensibilidade, f&eacute; e prop&oacute;sito para criar lares que acolhem e representam cada fam&iacute;lia.</p>
+        <p>Somos uma empresa familiar maranhense, com ra&iacute;zes crist&atilde;s. Do primeiro tra&ccedil;o &agrave; entrega das chaves, colocamos o cora&ccedil;&atilde;o em tudo o que fazemos &mdash; porque, na Jastelo, voc&ecirc; n&atilde;o &eacute; apenas cliente: &eacute; parte da nossa hist&oacute;ria.</p>
+        <div class="values"><div><strong>01</strong><span><b>Arquitetura com vis&atilde;o de dono.</b> Cada detalhe acompanhado da concep&ccedil;&atilde;o &agrave; entrega.</span></div><div><strong>02</strong><span><b>Corpo t&eacute;cnico pr&oacute;prio.</b> Qualidade e compromisso em todas as etapas.</span></div><div><strong>03</strong><span><b>Gest&atilde;o guiada por valores.</b> Integridade, responsabilidade e excel&ecirc;ncia.</span></div></div>
+        <a class="text-link" href="sobre.html">Leia nossa hist&oacute;ria completa <span>&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="origin section" id="origem">
+      <div class="origin-title reveal"><p class="eyebrow light">Nossa ess&ecirc;ncia</p><h2>Por que<br>J.A.S.T.E.L.O?</h2><p>Nosso nome nasceu da base mais forte que existe: a fam&iacute;lia.</p></div>
+      <div class="name-story reveal"><div class="name-row"><strong>JA</strong><span>Jo&atilde;o Ant&ocirc;nio</span><small>Pai &middot; Cofundador</small></div><div class="name-row"><strong>S</strong><span>Sarah</span><small>Filha ca&ccedil;ula</small></div><div class="name-row"><strong>T</strong><span>Tharcyla</span><small>M&atilde;e &middot; Cofundadora e arquiteta</small></div><div class="name-row"><strong>E</strong><span>Emanuel</span><small>Segundo filho</small></div><div class="name-row"><strong>LO</strong><span>Luiz Ott&aacute;vio</span><small>Primog&ecirc;nito</small></div><blockquote>&ldquo;Constru&iacute;mos com t&eacute;cnica, mas tamb&eacute;m com sentimento.&rdquo;</blockquote></div>
+    </section>
+
+    <section class="process section" id="processo">
+      <div class="section-heading reveal"><div><p class="eyebrow">Da escolha &agrave;s chaves</p><h2>Comprar sua casa<br>pode ser simples.</h2></div><p>Nossa equipe acompanha voc&ecirc; em todas as etapas, com clareza para tomar uma decis&atilde;o segura. <a class="inline-link" href="como-comprar.html">Conhe&ccedil;a o processo &rarr;</a></p></div>
+      <div class="steps">
+        <article class="reveal"><span>01</span><h3>Encontre seu im&oacute;vel</h3><p>Explore as op&ccedil;&otilde;es e escolha a casa que combina com seus planos.</p></article>
+        <article class="reveal"><span>02</span><h3>Fa&ccedil;a uma visita</h3><p>Conhe&ccedil;a cada ambiente e tire todas as d&uacute;vidas com um especialista.</p></article>
+        <article class="reveal"><span>03</span><h3>Simule e negocie</h3><p>Avaliamos financiamento e condi&ccedil;&otilde;es adequadas ao seu momento.</p></article>
+        <article class="reveal"><span>04</span><h3>Receba as chaves</h3><p>Conte com a Jastelo at&eacute; o dia mais esperado &mdash; e depois dele.</p></article>
+      </div>
+    </section>
+
+    <section class="contact section" id="contato">
+      <div class="contact-intro reveal"><p class="eyebrow light">Vamos conversar?</p><h2>Sua nova casa<br>est&aacute; mais perto<br>do que parece.</h2><p>Preencha seus dados. Nossa equipe entra em contato para entender o que voc&ecirc; procura.</p><div class="contact-direct"><span>Prefere falar agora?</span><a href="https://wa.me/5519991570231" target="_blank" rel="noopener">WhatsApp: (19) 99157-0231 &#8599;</a></div></div>
+      <form class="lead-form reveal" id="lead-form">
+        <label>Como podemos chamar voc&ecirc;?<input name="nome" required placeholder="Seu nome completo"></label>
+        <div class="form-row"><label>Seu WhatsApp<input name="telefone" required inputmode="tel" placeholder="(99) 99999-9999"></label><label>Seu e-mail<input name="email" type="email" placeholder="voce@email.com"></label></div>
+        <label>O que voc&ecirc; procura?<select name="interesse"><option>Casa pronta para morar</option><option>Im&oacute;vel em constru&ccedil;&atilde;o</option><option>Quero conhecer todas as op&ccedil;&otilde;es</option></select></label>
+        <label class="checkbox"><input type="checkbox" required><span>Concordo em receber contato da equipe Jastelo.</span></label>
+        <button class="button primary" type="submit">Quero falar com um especialista <span>&rarr;</span></button>
+        <p class="form-feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><img src="assets/jastelo-01.png" alt="Jastelo"><p>Casas feitas para viver bem.</p></div><div><strong>Navegue</strong><a href="imoveis.html">Im&oacute;veis</a><a href="sobre.html">Sobre n&oacute;s</a><a href="como-comprar.html">Como comprar</a></div><div><strong>Atendimento</strong><a href="tel:+5519991570231">(19) 99157-0231</a><a href="mailto:Thayna@icafeoficial.com">Thayna@icafeoficial.com</a><span>S&atilde;o Lu&iacute;s &middot; Maranh&atilde;o</span></div><div><strong>Acompanhe</strong><a href="#">Instagram &#8599;</a><a href="#">Facebook &#8599;</a></div><p class="copyright">&copy; 2026 Jastelo Constru&ccedil;&otilde;es e Empreendimentos. Todos os direitos reservados.</p></footer>
+
+  <a class="whatsapp" href="https://wa.me/5519991570231" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><span>&bull;</span><b>Fale com a gente</b></a>
+
+  <dialog class="property-dialog" id="property-dialog">
+    <button class="dialog-close" aria-label="Fechar">&times;</button>
+    <div class="dialog-content"><div class="dialog-gallery"><img id="dialog-main-image" src="assets/jastelo-40.png" alt="Im&oacute;vel Jastelo"><div class="thumbs"><button data-image="assets/jastelo-40.png"><img src="assets/jastelo-40.png" alt="Fachada"></button><button data-image="assets/jastelo-36.png"><img src="assets/jastelo-36.png" alt="&Aacute;rea de lazer"></button><button data-image="assets/jastelo-38.png"><img src="assets/jastelo-38.png" alt="Interior"></button></div></div><div class="dialog-info"><p class="property-code" id="dialog-code">JA-001 &middot; ALTO DO TURU</p><h2 id="dialog-title">Resid&ecirc;ncia T&eacute;rrea Alto do Turu</h2><p id="dialog-description">Arquitetura contempor&acirc;nea, ambientes integrados e acabamento selecionado para voc&ecirc; viver com conforto.</p><div class="dialog-facts"><div><small>&Aacute;rea constru&iacute;da</small><strong id="dialog-area">117,62 m&sup2;</strong></div><div><small>Quartos</small><strong id="dialog-rooms">3</strong></div><div><small>Banheiros</small><strong>3</strong></div><div><small>Garagem</small><strong>2 vagas</strong></div></div><h3>Diferenciais</h3><ul><li>&Aacute;rea gourmet com churrasqueira</li><li>Arquitetura contempor&acirc;nea</li><li>Ambientes integrados</li><li>Acabamento de alto padr&atilde;o</li></ul><div class="dialog-price"><small>Valor do im&oacute;vel</small><strong id="dialog-price">R$ 530.000</strong></div><a class="button primary" id="dialog-whatsapp" href="https://wa.me/5519991570231" target="_blank" rel="noopener">Falar com a vendedora <span>&rarr;</span></a><p class="location">&#9679; Alto do Turu, S&atilde;o Jos&eacute; de Ribamar &mdash; MA</p></div></div>
+  </dialog>
+</body>
+</html>
