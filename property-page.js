@@ -36,23 +36,30 @@
   setText("property-location", property.location);
   setText("property-description", property.description);
 
+  const images = property.images.map((image) => typeof image === "string" ? { src: image, area: "Ambientes", label: property.title } : image);
   const mainImage = document.getElementById("property-main-image");
-  mainImage.src = property.images[0];
+  mainImage.src = images[0].src;
   mainImage.alt = property.title;
 
   const previewImage = document.getElementById("property-preview-image");
-  previewImage.src = property.images[1] || property.images[0];
+  previewImage.src = (images[1] || images[0]).src;
   previewImage.alt = `Outro ângulo de ${property.title}`;
 
   const gallery = document.getElementById("property-gallery");
-  property.images.forEach((source, index) => {
-    const figure = document.createElement("figure");
+  images.slice(0, 3).forEach((photo, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "gallery-tile";
+    button.setAttribute("aria-label", `Abrir foto: ${photo.label}`);
     const image = document.createElement("img");
-    image.src = source;
-    image.alt = `${property.title} — imagem ${index + 1}`;
-    image.loading = index > 1 ? "lazy" : "eager";
-    figure.appendChild(image);
-    gallery.appendChild(figure);
+    image.src = photo.src;
+    image.alt = photo.label;
+    image.loading = index > 0 ? "lazy" : "eager";
+    const label = document.createElement("span");
+    label.innerHTML = `<small>${photo.area}</small>${photo.label}<b>↗</b>`;
+    button.append(image, label);
+    button.addEventListener("click", () => openGallery(index));
+    gallery.appendChild(button);
   });
 
   const highlights = document.getElementById("property-highlights");
@@ -71,7 +78,91 @@
     link.href = `https://wa.me/559870230832?text=${encodeURIComponent(whatsappText)}`;
   });
 
-  document.querySelectorAll("[data-gallery-link]").forEach((link) => {
-    link.addEventListener("click", () => document.getElementById("galeria").scrollIntoView({ behavior: "smooth" }));
+  const lightbox = document.getElementById("gallery-lightbox");
+  const lightboxImage = document.getElementById("gallery-main-image");
+  const categoryList = document.getElementById("gallery-categories");
+  const thumbnailList = document.getElementById("gallery-thumbnails");
+  const previousButton = document.getElementById("gallery-previous");
+  const nextButton = document.getElementById("gallery-next");
+  let activeIndex = 0;
+  let activeCategory = "Todos";
+
+  const visibleIndexes = () => images.map((_, index) => index).filter((index) => activeCategory === "Todos" || images[index].area === activeCategory);
+
+  const renderCategories = () => {
+    categoryList.replaceChildren();
+    ["Todos", ...new Set(images.map((image) => image.area))].forEach((category) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = category;
+      button.classList.toggle("active", category === activeCategory);
+      button.addEventListener("click", () => {
+        activeCategory = category;
+        activeIndex = visibleIndexes()[0];
+        renderCategories();
+        renderGallery();
+      });
+      categoryList.appendChild(button);
+    });
+  };
+
+  const renderGallery = () => {
+    const photo = images[activeIndex];
+    const indexes = visibleIndexes();
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.label;
+    setText("gallery-area", photo.area);
+    setText("gallery-caption", photo.label);
+    setText("gallery-counter", `${indexes.indexOf(activeIndex) + 1} / ${indexes.length}`);
+    previousButton.disabled = indexes.length < 2;
+    nextButton.disabled = indexes.length < 2;
+    thumbnailList.replaceChildren();
+    indexes.forEach((index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.classList.toggle("active", index === activeIndex);
+      button.setAttribute("aria-label", `Ver ${images[index].label}`);
+      const image = document.createElement("img");
+      image.src = images[index].src;
+      image.alt = "";
+      button.appendChild(image);
+      button.addEventListener("click", () => {
+        activeIndex = index;
+        renderGallery();
+      });
+      thumbnailList.appendChild(button);
+    });
+  };
+
+  const moveGallery = (direction) => {
+    const indexes = visibleIndexes();
+    const position = indexes.indexOf(activeIndex);
+    activeIndex = indexes[(position + direction + indexes.length) % indexes.length];
+    renderGallery();
+  };
+
+  function openGallery(index = 0) {
+    activeCategory = "Todos";
+    activeIndex = index;
+    renderCategories();
+    renderGallery();
+    lightbox.showModal();
+  }
+
+  document.querySelectorAll("[data-gallery-link]").forEach((button) => button.addEventListener("click", () => openGallery(0)));
+  document.getElementById("gallery-close").addEventListener("click", () => lightbox.close());
+  previousButton.addEventListener("click", () => moveGallery(-1));
+  nextButton.addEventListener("click", () => moveGallery(1));
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
   });
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.open) return;
+    if (event.key === "ArrowLeft") moveGallery(-1);
+    if (event.key === "ArrowRight") moveGallery(1);
+  });
+  if (window.location.hash === "#galeria") {
+    window.setTimeout(() => document.getElementById("galeria").scrollIntoView(), 80);
+  }
+  if (params.get("galeria") === "1") openGallery(0);
 })();

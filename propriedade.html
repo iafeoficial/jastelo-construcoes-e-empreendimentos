@@ -67,7 +67,7 @@
     </section>
 
     <section class="property-gallery-section" id="galeria">
-      <div class="property-shell"><p class="eyebrow">Ambientes</p><h2>Conheça cada detalhe.</h2><div class="property-gallery-grid" id="property-gallery"></div></div>
+      <div class="property-shell"><div class="gallery-heading"><div><p class="eyebrow">Ambientes</p><h2>Conheça cada detalhe.</h2></div><button class="gallery-open-button" type="button" data-gallery-link>Ver todas as fotos <span>↗</span></button></div><div class="property-gallery-grid" id="property-gallery"></div></div>
     </section>
 
     <section class="property-shell property-location-section" id="localizacao">
@@ -77,6 +77,19 @@
 
     <section class="property-cta"><div class="property-shell"><div><p class="eyebrow light">Seu próximo lar</p><h2>Gostou deste imóvel?</h2><p>Fale com a equipe Jastelo e receba todas as informações para dar o próximo passo.</p></div><a class="button primary" data-property-contact target="_blank" rel="noopener">Quero saber mais <span>↗</span></a></div></section>
   </main>
+
+  <dialog class="gallery-lightbox" id="gallery-lightbox" aria-labelledby="gallery-dialog-title">
+    <div class="lightbox-panel">
+      <header class="lightbox-header"><div><small>Galeria do imóvel</small><strong id="gallery-dialog-title">Ambientes</strong></div><button class="lightbox-close" id="gallery-close" type="button" aria-label="Fechar galeria">&times;</button></header>
+      <nav class="lightbox-categories" id="gallery-categories" aria-label="Filtrar fotos por ambiente"></nav>
+      <div class="lightbox-stage">
+        <button class="lightbox-arrow previous" id="gallery-previous" type="button" aria-label="Foto anterior">←</button>
+        <figure><img id="gallery-main-image" src="assets/jastelo-40.png" alt=""><figcaption><div><strong id="gallery-area"></strong><span id="gallery-caption"></span></div><span id="gallery-counter"></span></figcaption></figure>
+        <button class="lightbox-arrow next" id="gallery-next" type="button" aria-label="Próxima foto">→</button>
+      </div>
+      <div class="lightbox-thumbnails" id="gallery-thumbnails" aria-label="Miniaturas da galeria"></div>
+    </div>
+  </dialog>
 
   <footer><div class="footer-brand"><img src="assets/jastelo-logo-oficial.png" alt="Jastelo"><p>Casas feitas para viver bem.</p></div><div><strong>Navegue</strong><a href="index.html">Início</a><a href="imoveis.html">Imóveis</a><a href="sobre.html">Sobre nós</a></div><div><strong>Atendimento</strong><a data-property-contact target="_blank" rel="noopener">Falar pelo WhatsApp</a><a href="mailto:Thayna@icafeoficial.com">Thayna@icafeoficial.com</a></div><p class="copyright">© 2026 Jastelo Construções e Empreendimentos.</p></footer>
 </body>
