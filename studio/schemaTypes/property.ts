@@ -1,4 +1,6 @@
-import {HomeIcon, ImagesIcon, MapPinIcon} from '@sanity/icons'
+import {HomeIcon} from '@sanity/icons/Home'
+import {ImagesIcon} from '@sanity/icons/Images'
+import {PinIcon} from '@sanity/icons/Pin'
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const propertyType = defineType({
@@ -10,7 +12,7 @@ export const propertyType = defineType({
     {name: 'main', title: 'Informações principais', default: true},
     {name: 'details', title: 'Ficha técnica'},
     {name: 'media', title: 'Fotos', icon: ImagesIcon},
-    {name: 'location', title: 'Localização', icon: MapPinIcon},
+    {name: 'location', title: 'Localização', icon: PinIcon},
     {name: 'publication', title: 'Publicação'},
   ],
   fields: [
