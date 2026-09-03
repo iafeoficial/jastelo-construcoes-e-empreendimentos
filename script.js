@@ -1,3 +1,4 @@
+if(!document.querySelector('link[rel="icon"]')){const favicon=document.createElement('link');favicon.rel='icon';favicon.type='image/svg+xml';favicon.href='assets/favicon.svg';document.head.appendChild(favicon)}
 const navigation=document.querySelector('.main-nav');if(navigation&&!navigation.querySelector('[href="trabalhe-conosco.html"]')){const careersLink=document.createElement('a');careersLink.href='trabalhe-conosco.html';careersLink.textContent='Trabalhe conosco';navigation.appendChild(careersLink)}
 const menuButton=document.querySelector('.menu-button');
 if(menuButton){menuButton.addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');menuButton.setAttribute('aria-expanded',String(open))});document.querySelectorAll('.main-nav a').forEach(link=>link.addEventListener('click',()=>{document.body.classList.remove('menu-open');menuButton.setAttribute('aria-expanded','false')}))}

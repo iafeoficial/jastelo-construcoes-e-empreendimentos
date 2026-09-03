@@ -5,12 +5,12 @@
 .site-header .brand {
   width: 176px;
   height: 66px;
-  padding: 6px 12px;
+  padding: 0;
   display: flex;
   align-items: center;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   filter: none;
 }
 
@@ -19,7 +19,7 @@
   height: auto;
   max-height: 54px;
   object-fit: contain;
-  filter: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
 }
 
 .hero-content {
@@ -72,7 +72,7 @@ footer a:hover {
   .site-header .brand {
     width: 138px;
     height: 56px;
-    padding: 5px 9px;
+    padding: 0;
   }
 
   .menu-button {
