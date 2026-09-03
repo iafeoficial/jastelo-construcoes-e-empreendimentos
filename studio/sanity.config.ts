@@ -3,13 +3,10 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {HomeIcon} from '@sanity/icons'
 import {schemaTypes} from './schemaTypes'
+import {InitialDataTool} from './initialDataTool'
 
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || '99xajzxf'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
-
-if (!projectId) {
-  throw new Error('Defina SANITY_STUDIO_PROJECT_ID para conectar o painel da Jastelo.')
-}
 
 export default defineConfig({
   name: 'jastelo',
@@ -31,6 +28,14 @@ export default defineConfig({
           ]),
     }),
     visionTool(),
+  ],
+  tools: (previousTools) => [
+    ...previousTools,
+    {
+      name: 'importacao-inicial',
+      title: 'Importar imóveis atuais',
+      component: InitialDataTool,
+    },
   ],
   schema: {types: schemaTypes},
 })

@@ -1,8 +1,9 @@
-(function () {
+(async function () {
   const params = new URLSearchParams(window.location.search);
   const key = params.get("id") || "turu";
+  if (window.JASTELO_CMS_READY) await window.JASTELO_CMS_READY;
   const properties = window.JASTELO_PROPERTIES || {};
-  const property = properties[key] || properties.turu;
+  const property = properties[key] || properties.turu || properties[Object.keys(properties)[0]];
   if (!property) return;
 
   const setText = (id, value) => {
@@ -36,7 +37,8 @@
   setText("property-location", property.location);
   setText("property-description", property.description);
 
-  const images = property.images.map((image) => typeof image === "string" ? { src: image, area: "Ambientes", label: property.title } : image);
+  const images = (property.images || []).map((image) => typeof image === "string" ? { src: image, area: "Ambientes", label: property.title } : image);
+  if (!images.length) images.push({src: "assets/jastelo-40.png", area: "Fachada", label: property.title});
   const mainImage = document.getElementById("property-main-image");
   mainImage.src = images[0].src;
   mainImage.alt = property.title;
