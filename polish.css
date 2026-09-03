@@ -2,6 +2,26 @@
   animation: none;
 }
 
+.site-header .brand {
+  width: 176px;
+  height: 66px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  filter: none;
+}
+
+.site-header .brand img {
+  width: 100%;
+  height: auto;
+  max-height: 54px;
+  object-fit: contain;
+  filter: none;
+}
+
 .hero-content {
   top: 50%;
   transform: translateY(-44%);
@@ -49,6 +69,12 @@ footer a:hover {
 }
 
 @media (max-width: 640px) {
+  .site-header .brand {
+    width: 138px;
+    height: 56px;
+    padding: 5px 9px;
+  }
+
   .menu-button {
     position: absolute;
     right: 20px;

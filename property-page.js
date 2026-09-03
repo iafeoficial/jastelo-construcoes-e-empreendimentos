@@ -17,12 +17,12 @@
   const title = document.getElementById("property-title");
   if (title && window.matchMedia("(max-width: 640px)").matches) {
     const mobileTitles = {
-      turu: "ResidÃªncia<br>TÃ©rrea Alto do Turu",
-      "turu-sem-piscina": "ResidÃªncia<br>TÃ©rrea Alto do Turu",
-      aracagy: "ResidÃªncia<br>TÃ©rrea AraÃ§agy",
-      "planta-sem-piscina": "ResidÃªncia<br>Alto do Turu<br>na planta",
-      "planta-com-piscina": "ResidÃªncia<br>Alto do Turu<br>na planta",
-      duplex: "Duplex AraÃ§agy<br>Praia Azul"
+      turu: "Residência<br>Térrea Alto do Turu",
+      "turu-sem-piscina": "Residência<br>Térrea Alto do Turu",
+      aracagy: "Residência<br>Térrea Araçagy",
+      "planta-sem-piscina": "Residência<br>Alto do Turu<br>na planta",
+      "planta-com-piscina": "Residência<br>Alto do Turu<br>na planta",
+      duplex: "Duplex Araçagy<br>Praia Azul"
     };
     title.innerHTML = mobileTitles[key] || property.title;
   }
@@ -42,14 +42,14 @@
 
   const previewImage = document.getElementById("property-preview-image");
   previewImage.src = property.images[1] || property.images[0];
-  previewImage.alt = `Outro Ã¢ngulo de ${property.title}`;
+  previewImage.alt = `Outro ângulo de ${property.title}`;
 
   const gallery = document.getElementById("property-gallery");
   property.images.forEach((source, index) => {
     const figure = document.createElement("figure");
     const image = document.createElement("img");
     image.src = source;
-    image.alt = `${property.title} â€” imagem ${index + 1}`;
+    image.alt = `${property.title} — imagem ${index + 1}`;
     image.loading = index > 1 ? "lazy" : "eager";
     figure.appendChild(image);
     gallery.appendChild(figure);
@@ -66,7 +66,7 @@
   map.src = `https://www.google.com/maps?q=${encodeURIComponent(property.mapQuery)}&output=embed`;
   map.title = `Mapa de ${property.location}`;
 
-  const whatsappText = `OlÃ¡! Gostaria de receber mais informaÃ§Ãµes sobre ${property.title} (${property.code}).`;
+  const whatsappText = `Olá! Gostaria de receber mais informações sobre ${property.title} (${property.code}).`;
   document.querySelectorAll("[data-property-contact]").forEach((link) => {
     link.href = `https://wa.me/559870230832?text=${encodeURIComponent(whatsappText)}`;
   });
