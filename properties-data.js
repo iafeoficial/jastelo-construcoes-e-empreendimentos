@@ -86,7 +86,7 @@ window.JASTELO_PROPERTIES = {
   "planta-com-piscina": {
     index: "05",
     code: "JA-005 · ALTO DO TURU",
-    title: "Residência Alto do Turu na planta",
+    title: "Residência Alto do Turu",
     status: "Venda na planta · com piscina",
     area: "117,62 m²",
     rooms: "3 quartos",
