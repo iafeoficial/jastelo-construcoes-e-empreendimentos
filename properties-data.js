@@ -51,7 +51,7 @@ window.JASTELO_PROPERTIES = {
     bathrooms: "5 banheiros",
     garage: "2 vagas",
     year: "Venda na Planta",
-    price: "R$ 1.100,000,00",
+    price: "R$ 1.100.000,00",
     location: "Araçagy, São José de Ribamar — MA",
     mapQuery: "Araçagy, São José de Ribamar, MA",
     description: "Com estilo contemporâneo marcado por linhas retas, volumes imponentes e integração total dos ambientes, esta residência reúne sofisticação, funcionalidade e alto padrão construtivo em uma localização valorizada.",
